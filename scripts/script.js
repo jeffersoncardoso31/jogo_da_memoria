@@ -7,12 +7,15 @@ let jogadores = [null,null]
 let branco = document.querySelector('#branco');
 let roxo = document.querySelector('#roxo');
 
-branco.style.backgroundColor='rgba(255, 255, 0, 0.589)'
-branco.style.boxShadow = '5px 5px 10px yellow';
+
 startGame();
 
 function startGame() {
     initializeCards(game.criarCardsParaPersonagens());
+    branco.style.backgroundColor='rgba(255, 255, 0, 0.589)'
+    branco.style.boxShadow = '5px 5px 10px yellow';
+    roxo.style.backgroundColor='rgba(255, 255, 0, 0)'
+    roxo.style.boxShadow = '5px 5px 10px black';
 }
 
 function initializeCards(cards) {
@@ -116,12 +119,18 @@ function virarCard() {
     }
 
 }
+function limparJogo(){
+    branco.innerHTML = 0;
+    roxo.innerHTML = 0;
+    jogador = 0;
+    jogadores[0] = 0;
+    jogadores[1] = 0
+}
 
 function reiniciar() {
     game.limparCards();
-    branco.inneText = 0;
-    roxo.inneText = 0;
-    jogador = 0;
+    limparJogo();
+   
     startGame();
     let gameOverLayer = document.getElementById("gameOver");
     gameOverLayer.style.display = 'none';
