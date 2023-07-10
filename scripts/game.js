@@ -4,7 +4,7 @@ let game = {
     firstCard: null,
     secondCard: null,
 
-    techs: ['aladin',
+    personagens: ['aladin',
         'donald',
         'io',
         'leitao',
@@ -44,25 +44,25 @@ let game = {
 
     },
 
-    checkMatch: function () {
+    verificarCorrespondente: function () {
         if (!this.firstCard || !this.secondCard) {
             return false;
         }
         return this.firstCard.icon === this.secondCard.icon;
     },
 
-    clearCards: function () {
+    limparCards: function () {
         this.firstCard = null;
         this.secondCard = null;
         this.lockMode = false;
     },
-    unflipCards() {
+    abrirCards() {
         this.firstCard.flipped = false;
         this.secondCard.flipped = false;
-        this.clearCards();
+        this.limparCards();
     },
 
-    checkGameOver() {
+    verificarFimJogo() {
 
         return this.cards.filter(card => !card.flipped).length == 0;
         
@@ -72,37 +72,37 @@ let game = {
 
 
 
-    createCardsFromTechs: function () {
+    criarCardsParaPersonagens: function () {
 
         this.cards = [];
 
-        this.techs.forEach((tech) => {
-            this.cards.push(this.createPairFromTech(tech));
+        this.personagens.forEach((personagem) => {
+            this.cards.push(this.criarParParaPersonagem(personagem));
         })
         this.cards = this.cards.flatMap(pair => pair);
-        this.shuffleCards();
+        this.embaralharCards();
         return this.cards;
     },
 
-    createPairFromTech: function (tech) {
+    criarParParaPersonagem: function (personagem) {
 
         return [{
-            id: this.createIdWithTech(tech),
-            icon: tech,
+            id: this.criarIdPersonagen(personagem),
+            icon: personagem,
             flipped: false,
         }, {
-            id: this.createIdWithTech(tech),
-            icon: tech,
+            id: this.criarIdPersonagen(personagem),
+            icon: personagem,
             flipped: false,
         }]
 
     },
 
-    createIdWithTech: function (tech) {
-        return tech + parseInt(Math.random() * 1000);
+    criarIdPersonagen: function (personagem) {
+        return personagem + parseInt(Math.random() * 1000);
     },
 
-    shuffleCards: function (cards) {
+    embaralharCards: function (cards) {
         let currentIndex = this.cards.length;
         let randomIndex = 0;
 

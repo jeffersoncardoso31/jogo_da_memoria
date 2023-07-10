@@ -1,19 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 50px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Roboto Mono', monospace;
 }
 img{ 
     height: 2.8rem;
 }
 body{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; 
+    justify-content: space-around; 
     height: 100vh;
     background-image: linear-gradient(to bottom, rgb(0, 0, 195) ,rgb(0, 0, 168), white);
+    flex-direction: column;
 }
 .card{
     width: 3rem;
@@ -61,6 +63,9 @@ body{
     color: white;
     top: 0;
 }
+#resultado{
+    text-align: center;
+}
 #restart{
     font-size: .8rem;
     padding: .6rem;
@@ -70,18 +75,47 @@ body{
     margin-top:  3rem;
     font-weight: bolder;
 }
+#branco{
+    grid-area: a1;
+    color: white;
+    display: block;
+}
+.placar{
+    font-size: 4rem;
+    filter: drop-shadow(5px 5px 2px  black);
+    box-shadow: 5px 5px 10px black;
+    /* display: inline; */
+}
+#roxo{
+    grid-area: a3;
+    color: rgb(115, 0, 255);
+    
+}
 #gameBoard{
     display: grid;
     gap: .3rem;
     grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-area: a2;
+}
+#containerPlacarMobile{
+    display: none;
 }
 @media (max-width: 800px){
     *{
         font-size: 21px;
+    }
+    .placar{
+        font-size: 2.5rem;
+        padding: .7rem;
     }
     #gameBoard{
         display: grid;
         gap: .3rem;
         grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr;
     }
+    #containerPlacarMobile{
+        display: flex;
+        gap: 30px;
+    }
+
 }
