@@ -84,6 +84,7 @@ body{
     box-shadow: 5px 5px 10px black;
     padding: .6rem;
     transition-duration: 1.5s;
+    border-radius: .8rem;
 }
 #roxo{
     color: rgb(115, 0, 255);

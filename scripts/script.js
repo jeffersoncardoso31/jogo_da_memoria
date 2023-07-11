@@ -14,7 +14,7 @@ function startGame() {
     initializeCards(game.criarCardsParaPersonagens());
     branco.style.backgroundColor='rgba(255, 255, 0, 0.589)'
     branco.style.boxShadow = '5px 5px 10px yellow';
-    roxo.style.backgroundColor='rgba(255, 255, 0, 0)'
+    roxo.style.backgroundColor='#05c5ff'
     roxo.style.boxShadow = '5px 5px 10px black';
 }
 
@@ -39,11 +39,11 @@ function trocarJogador(){
         jogador = 1
         roxo.style.backgroundColor='rgba(255, 255, 0, 0.589)'
         roxo.style.boxShadow = '5px 5px 10px yellow';
-        branco.style.backgroundColor='rgba(255, 255, 0, 0)'
+        branco.style.backgroundColor='#05c5ff'
         branco.style.boxShadow = '5px 5px 10px black';
     }else{
         jogador = 0
-        roxo.style.backgroundColor='rgba(255, 255, 0, 0)'
+        roxo.style.backgroundColor='#05c5ff'
         roxo.style.boxShadow = '5px 5px 10px black';
         branco.style.backgroundColor='rgba(255, 255, 0, 0.589)'
         branco.style.boxShadow = '5px 5px 10px yellow';
